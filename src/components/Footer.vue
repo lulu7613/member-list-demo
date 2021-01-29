@@ -53,7 +53,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
+    z-index: 100;
   }
 
   .item {
@@ -62,6 +62,7 @@ export default {
     padding-top: 21px;
     box-sizing: border-box;
     text-align: center;
+    cursor: pointer;
 
     &__icon {
       width: 22px;

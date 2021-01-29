@@ -1,0 +1,27 @@
+h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+.appMember {
+  position: relative;
+  box-sizing: border-box;
+  width: 375px;
+  height: 183px;
+  background-color: #8A56AC;
+  color: #FFFFFF;
+  border-radius: 0px 0px 0px 80px;
+  background-repeat:  no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  &__icon {
+    position: absolute;
+    left: 1rem;
+    bottom: 3rem;
+  }
+
+  &__text {
+    opacity: 0.72;
+  }
+}
