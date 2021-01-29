@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <Recharge
+      v-if="checkRechargeVisible"
+    />
     <Header />
     <div class="main">
       <MyLevel
@@ -12,7 +15,7 @@
         :index="k"
         :ListLength="filterMemberList.length"
         :item="item"
-        :isRecagrge="rechargeLevel === item.level"
+        :showRecagrge="rechargeLevel === item.level"
         @recharge="getRecharge"
       />
     </div>
@@ -28,6 +31,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import MyLevel from './components/MyLevel'
 import Level from './components/Level'
+import Recharge from './components/Recharge'
 import CustomerServer from './components/CustomerServer'
 
 export default {
@@ -38,12 +42,13 @@ export default {
     Footer,
     MyLevel,
     Level,
+    Recharge,
     CustomerServer,
   },
 
   data() {
     return {
-      myLevel: 0,
+      // myLevel: 0,
       rechargeLevel: null,
       memberList: [],
     }
@@ -53,6 +58,14 @@ export default {
     filterMemberList() {
       const myLevel = this.myLevel
       return this.memberList.filter(item => item.level !== myLevel)
+    },
+
+    myLevel() {
+      return this.$store.state.myLevel
+    },
+
+    checkRechargeVisible() {
+      return this.$store.state.checkRechargeVisible
     },
   },
 

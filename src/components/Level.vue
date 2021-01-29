@@ -7,7 +7,7 @@
       'z-index': ListLength - index,
       'margin-top': marginTop,
     }"
-    @click="actRecharge(item.level)"
+    @click="showRecharge(item.level)"
   >
     <img
       class="appMember__icon"
@@ -20,8 +20,8 @@
       </div>
       <div class="money">
         <p class="appMember__text">￥{{ item.money}}.00</p>
-        <div v-show="isRecagrge">
-          <button class="recharge-btn">充值</button>
+        <div v-show="showRecagrge">
+          <button class="recharge-btn" @click="checkRecharge(item)">充值</button>
         </div>
       </div>
     </div>
@@ -45,7 +45,7 @@ export default {
       type: Number,
       default: 0,
     },
-    isRecagrge: {
+    showRecagrge: {
       type: Boolean,
       default: false,
     },
@@ -60,14 +60,18 @@ export default {
     },
 
     marginTop() {
-      const isRecagrge = this.isRecagrge
-      return isRecagrge ? '-30px' : '-60px'
+      const showRecagrge = this.showRecagrge
+      return showRecagrge ? '-30px' : '-60px'
     }
   },
 
   methods: {
-    actRecharge(level) {
+    showRecharge(level) {
       this.$emit('recharge', level)
+    },
+
+    checkRecharge(item) {
+      this.$store.commit('CHECK_RECHERGE', { visible: true, item })
     },
   }
 }
