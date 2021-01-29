@@ -48,6 +48,7 @@ export default {
     overflow: auto;
     position: relative;
     font-family: Microsoft JhengHei;
+    background-color: #352641;
   }
 </style>
 

@@ -45,15 +45,22 @@ export default {
 
 <style lang="scss" scoped>
   .footer {
+    width: 375px;
     position: absolute;
+    left: 0;
     bottom: 0;
+    background-color: #FFFFFF;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
   }
 
   .item {
     width: 93px;
     height: 64px;
+    padding-top: 21px;
+    box-sizing: border-box;
     text-align: center;
 
     &__icon {

@@ -13,7 +13,7 @@ export default {
 <style lang="scss" scoped>
   .customer-server {
     position: absolute;
-    bottom: 9rem;
+    bottom: 7.5rem;
     right: 1.5rem;
     width: 52px;
     height: 52px;
