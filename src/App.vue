@@ -1,18 +1,25 @@
 <template>
   <div id="app">
+    <Header />
     <Footer />
+
+    <CustomerServer />
   </div>
 </template>
 
 <script>
 import { members } from './assets/js/data'
+import Header from './components/Header'
 import Footer from './components/Footer'
+import CustomerServer from './components/CustomerServer'
 
 export default {
   name: 'app',
 
   components: {
+    Header,
     Footer,
+    CustomerServer,
   },
 
   data() {
